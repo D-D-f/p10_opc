@@ -56,13 +56,12 @@ const Form = ({ onSuccess, onError }) => {
 
 Form.propTypes = {
   onError: PropTypes.func,
-    // eslint-disable-next-line react/require-default-props
   onSuccess: PropTypes.func,
 }
 
 Form.defaultProps = {
   onError: () => null,
-
+    onSuccess: () => null
 }
 
 export default Form;
