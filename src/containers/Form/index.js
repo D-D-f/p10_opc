@@ -23,6 +23,7 @@ const Form = ({ onSuccess, onError }) => {
     },
     [onSuccess, onError]
   );
+
   return (
     <form onSubmit={sendContact}>
       <div className="row">
@@ -37,7 +38,7 @@ const Form = ({ onSuccess, onError }) => {
             titleEmpty
           />
           <Field placeholder="" label="Email" />
-          <Button type={BUTTON_TYPES.SUBMIT} disabled={sending}>
+          <Button type={BUTTON_TYPES.SUBMIT} disabled={sending} onClick={onSuccess}>
             {sending ? "En cours" : "Envoyer"}
           </Button>
         </div>
@@ -55,12 +56,13 @@ const Form = ({ onSuccess, onError }) => {
 
 Form.propTypes = {
   onError: PropTypes.func,
+    // eslint-disable-next-line react/require-default-props
   onSuccess: PropTypes.func,
 }
 
 Form.defaultProps = {
   onError: () => null,
-  onSuccess: () => null,
+
 }
 
 export default Form;
