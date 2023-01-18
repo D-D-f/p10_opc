@@ -29,10 +29,12 @@ const EventCard = ({
 );
 
 EventCard.propTypes = {
-  imageSrc: PropTypes.string.isRequired,
+  // eslint-disable-next-line react/require-default-props
+  imageSrc: PropTypes.string,
   imageAlt: PropTypes.string,
   date: PropTypes.instanceOf(Date).isRequired,
-  title: PropTypes.string.isRequired,
+  // eslint-disable-next-line react/require-default-props
+  title: PropTypes.string,
   small: PropTypes.bool,
   label: PropTypes.string.isRequired,
 };
