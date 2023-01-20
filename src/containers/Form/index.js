@@ -25,11 +25,12 @@ const Form = ({ onSuccess, onError }) => {
   );
 
   return (
+
     <form onSubmit={sendContact}>
       <div className="row">
         <div className="col">
-          <Field placeholder="" label="Nom" />
-          <Field placeholder="" label="Prénom" />
+          <Field placeholder="Entrez votre nom" label="Nom" />
+          <Field placeholder="Entrez votre prénom" label="Prénom" />
           <Select
             selection={["Personel", "Entreprise"]}
             onChange={() => null}
@@ -37,7 +38,7 @@ const Form = ({ onSuccess, onError }) => {
             type="large"
             titleEmpty
           />
-          <Field placeholder="" label="Email" />
+          <Field type={FIELD_TYPES.INPUT_MAIL} placeholder="Entrez votre email" label="Email" />
           <Button type={BUTTON_TYPES.SUBMIT} disabled={sending} onClick={onSuccess}>
             {sending ? "En cours" : "Envoyer"}
           </Button>
@@ -61,7 +62,7 @@ Form.propTypes = {
 
 Form.defaultProps = {
   onError: () => null,
-    onSuccess: () => null
+    onSuccess: () => !null
 }
 
 export default Form;

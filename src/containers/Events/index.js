@@ -51,7 +51,7 @@ const EventList = () => {
               .sort((evtA, evtB) =>
                 new Date(evtA.date) < new Date(evtB.date) ? -1 : 1
               )
-              .map((event) => (
+              .map((event) =>  (
                 <Modal key={event.id} Content={<ModalEvent event={event} />}>
                   {({ setIsOpened }) => (
                     <EventCard
